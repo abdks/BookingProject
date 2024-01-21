@@ -1,0 +1,21 @@
+﻿@model BookingProject.Dal.Entities.Sliders
+
+@{
+    ViewData["Title"] = "UpdateSliders";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>UpdateSliders</h1>
+
+
+<br />
+<br />
+<form method="post">
+    <label>Slider ID</label>
+    <input type="text" asp-for="SlidersID" class="form-control" />
+    <br />
+    <label>Slider Resimi</label>
+    <input type="text" asp-for="ImageURL" class="form-control" />
+    <br />
+    <button class="btn btn-success">Sliderı Güncelle</button>
+</form>

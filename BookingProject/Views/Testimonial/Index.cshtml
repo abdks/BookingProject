@@ -1,0 +1,45 @@
+﻿@model List<BookingProject.Dal.Entities.Testimonials>
+
+@{
+    int count = 0;
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<br />
+<br />
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>Sıra</th>
+            <th>#</th>
+            <th>Ad Soyad</th>
+            <th>Açıklama</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.TestimonalsID</td>
+                <td>@item.NameSurname</td>
+                <td>
+                    @if (item.Description.Length > 100)
+                    {
+                        <text>@item.Description.Substring(0, 50) ...</text>
+                    }
+                    else
+                    {
+                        <text>@item.Description</text>
+                    }
+                </td>
+                <td><a href="/Testimonial/DeleteTestimonials/@item.TestimonalsID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Testimonial/UpdateTestimonials/@item.TestimonalsID" class="btn btn-danger">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Testimonial/CreateTestimonials" class="btn btn-primary">Yeni Referans Girişi</a>
+</div>

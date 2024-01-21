@@ -1,0 +1,27 @@
+﻿@model BookingProject.Dal.Entities.Services
+
+@{
+    ViewData["Title"] = "UpdateServices";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>UpdateServicess</h1>
+
+
+<br />
+<br />
+<form method="post">
+    <label>ID</label>
+    <input type="text" asp-for="ServicesID" class="form-control" />
+    <br />
+    <label>Servis Resimi</label>
+    <input type="text" asp-for="Image" class="form-control" />
+    <br />
+    <label>Servis Açıklaması</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>Servis Başlığı</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <button class="btn btn-success">Servis Güncelle</button>
+</form>

@@ -1,0 +1,44 @@
+﻿@model List<BookingProject.Dal.Entities.Abouts>
+
+@{
+    int count = 0;
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<br />
+<br />
+<br />
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>Sıra</th>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Resim1</th>
+            <th>Resim2</th>
+
+
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.AboutID</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Image1</td>
+                <td>@item.Image2</td>
+
+                <td><a href="/About/DeleteAbouts/@item.AboutID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/About/UpdateAbouts/@item.AboutID" class="btn btn-danger">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/About/CreateAbouts" class="btn btn-primary">Yeni About Girişi</a>
+</div>

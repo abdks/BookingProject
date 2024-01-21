@@ -1,0 +1,22 @@
+﻿@model BookingProject.Dal.Entities.Testimonials
+
+@{
+    ViewData["Title"] = "CreateSliders";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<br />
+<br />
+
+<div class="container">
+    <form method="post">
+        <label>Referans Ad Soyadı</label>
+        <input type="text" asp-for="NameSurname" class="form-control" />
+        <br />
+        <label>Referans Açıklaması</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>

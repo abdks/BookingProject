@@ -1,0 +1,28 @@
+﻿@model BookingProject.Dal.Entities.Blogs
+
+@{
+    ViewData["Title"] = "CreateSliders";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<br />
+<br />
+
+<div class="container">
+    <form method="post">
+        <label>Blog ID</label>
+        <input type="text" asp-for="BlogsID" class="form-control" />
+        <br />
+        <label>Blog Adı</label>
+        <input type="text" asp-for="BlogsName" class="form-control" />
+        <br />
+        <label>Blog Tarihi</label>
+        <input type="text" asp-for="Date" class="form-control" />
+        <br />
+        <label>Blog Açıklaması</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+    </form>
+</div>

@@ -1,0 +1,42 @@
+﻿@model List<BookingProject.Dal.Entities.Blogs>
+
+@{
+    int count = 0;
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<br />
+<br />
+<br />
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>Sıra</th>
+            <th>#</th>
+            <th>Blog Adı</th>
+            <th>Blog Tarihi</th>
+            <th>Blog Açıklaması</th>
+
+
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.BlogsID</td>
+                <td>@item.BlogsName</td>
+                <td>@item.Date</td>
+                <td>@item.Description</td>
+
+                <td><a href="/Blog/DeleteBlogs/@item.BlogsID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Blog/UpdateBlogs/@item.BlogsID" class="btn btn-danger">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Blog/CreateBlogs" class="btn btn-primary">Yeni Blog Girişi</a>
+</div>

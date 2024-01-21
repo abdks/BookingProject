@@ -1,0 +1,55 @@
+﻿@model List<BookingProject.Dal.Entities.Footers>
+
+@{
+    int count = 0;
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<br />
+<br />
+<br />
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>Sıra</th>
+            <th>#</th>
+            <th>Açıklama</th>
+            <th>Tel</th>
+            <th>Mail</th>
+            <th>Adres</th>
+            <th>Şehir</th>
+            <th>Tasarımcı</th>
+            <th>Facebook</th>
+            <th>Instagram</th>
+            <th>Twitter</th>
+            <th>Youtube</th>
+
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.FootersID</td>
+                <td>@item.Description</td>
+                <td>@item.No</td>
+                <td>@item.Mail</td>
+                <td>@item.Adress</td>
+                <td>@item.City</td>
+                <td>@item.Designer</td>
+                <td>@item.Facebook</td>
+                <td>@item.Instagram</td>
+                <td>@item.Twitter</td>
+                <td>@item.Youtube</td>
+
+                <td><a href="/Footer/DeleteFooters/@item.FootersID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Footer/UpdateFooters/@item.FootersID" class="btn btn-danger">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Footer/CreateFooters" class="btn btn-primary">Yeni Footer Girişi</a>
+</div>

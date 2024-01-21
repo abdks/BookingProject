@@ -1,0 +1,28 @@
+﻿@model BookingProject.Dal.Entities.Contacts
+
+@{
+    ViewData["Title"] = "CreateSliders";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<br />
+<br />
+
+<div class="container">
+    <form method="post">
+        <label>İletişim Açıklaması</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <label>İletişim Adresi</label>
+        <input type="text" asp-for="Adress" class="form-control" />
+        <br />
+        <label>İletişim No</label>
+        <input type="text" asp-for="No" class="form-control" />
+        <br />
+        <label>İletişim Mail</label>
+        <input type="text" asp-for="Mail" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>

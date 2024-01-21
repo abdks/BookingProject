@@ -1,8 +1,19 @@
-﻿
+﻿@model BookingProject.Dal.Entities.Sliders
+
 @{
     ViewData["Title"] = "CreateSliders";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h1>CreateSliders</h1>
 
+<br />
+<br />
+
+<div class="container">
+    <form method="post">
+        <label>Slider Resimi</label>
+        <input type="text" asp-for="ImageURL" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>

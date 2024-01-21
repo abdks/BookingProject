@@ -1,0 +1,32 @@
+﻿@model BookingProject.Dal.Entities.Abouts
+
+@{
+    ViewData["Title"] = "CreateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<br />
+<br />
+
+<div class="container">
+    <form method="post">
+        <label>ID</label>
+        <input type="text" asp-for="AboutID" class="form-control" />
+        <br />
+        <label>Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <label>Resim1</label>
+        <input type="text" asp-for="Image1" class="form-control" />
+        <br />
+        <label>Resim2</label>
+        <input type="text" asp-for="Image2" class="form-control" />
+        <br />
+
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>

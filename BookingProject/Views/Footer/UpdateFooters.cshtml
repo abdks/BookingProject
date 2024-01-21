@@ -1,0 +1,48 @@
+﻿@model BookingProject.Dal.Entities.Footers
+
+@{
+    ViewData["Title"] = "UpdateSliders";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<br />
+
+<div class="container">
+    <form method="post">
+        <label>Footer Id</label>
+        <input type="text" asp-for="FootersID" class="form-control" />
+        <br />
+        <label>Footer Açıklaması</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <label>Telefon</label>
+        <input type="text" asp-for="No" class="form-control" />
+        <br />
+        <label>Mail</label>
+        <input type="text" asp-for="Mail" class="form-control" />
+        <br />
+        <label>Adres</label>
+        <input type="text" asp-for="Adress" class="form-control" />
+        <br />
+        <label>Şehir</label>
+        <input type="text" asp-for="City" class="form-control" />
+        <br />
+        <label>Tasarımcı</label>
+        <input type="text" asp-for="Designer" class="form-control" />
+        <br />
+        <label>Instagram</label>
+        <input type="text" asp-for="Instagram" class="form-control" />
+        <br />
+        <label>Twitter</label>
+        <input type="text" asp-for="Twitter" class="form-control" />
+        <br />
+        <label>Facebook</label>
+        <input type="text" asp-for="Facebook" class="form-control" />
+        <br />
+        <label>Youtube</label>
+        <input type="text" asp-for="Youtube" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+    </form>
+</div>
