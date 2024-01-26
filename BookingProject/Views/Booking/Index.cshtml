@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BookingHotelsViewModel.Result>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Booking Otel Rezarvasyon Sayfası</h1>
+
+<h3>Arama yapılan şehir : İstanbul</h3>
+
+<form method="get" asp-action="GetFilteredHotels" asp-controller="Booking">
+    <div class="col-lg-12 wow fadeIn" data-wow-delay=".5s">
+        <div class="p-5 rounded contact-form">
+            <div class="mb-4">
+                <label>Şehir giriniz</label>
+                <input type="text" class="form-control border-0 py-3" name="city" placeholder="Şehir">
+            </div>
+            <div class="mb-4">
+                <label for="inputCheckIn" class="form-label">Giriş Tarihi Giriniz</label>
+                <input type="date" name="checkInDate" id="inputCheckIn" class="form-control border-0 py-3">
+            </div>
+            <div class="mb-4">
+                <label for="inputCheckOut" class="form-label">Çıkış Tarihi Giriniz</label>
+                <input type="date" id="inputCheckOut" name="checkOutDate" class="form-control border-0 py-3">
+            </div>
+            <div class="mb-4">
+                <label>Kişi sayısı giriniz</label>
+                <input type="text" name="personCount" class="form-control border-0 py-3" placeholder="Kişi Sayısı">
+            </div>
+            <div class="mb-4">
+                <label>Oda sayısı giriniz</label>
+                <input type="text" name="roomCount" class="form-control border-0 py-3" placeholder="Oda Sayısı">
+            </div>
+
+            <div class="text-start">
+                <button class="btn bg-primary text-white py-3 px-5" type="submit">Getir</button>
+            </div>
+        </div>
+    </div>
+</form>

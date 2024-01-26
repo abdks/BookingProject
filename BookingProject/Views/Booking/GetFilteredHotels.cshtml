@@ -1,0 +1,45 @@
+﻿@model BookingProject.Models.BookingHotelsViewModel.Rootobject
+
+@{
+    ViewData["Title"] = "GetFilteredHotels";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<div class="container-fluid py-5 my-5">
+    <div class="container">
+        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+            <h5 class="text-primary">Aradığın Oteller Burada</h5>
+            <h1></h1>
+        </div>
+        @foreach (var item in Model.result)
+        {
+            <div class="card mb-4 wow fadeIn" data-wow-delay=".7s">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="@item.max_1440_photo_url" class="img-fluid rounded-start" alt="@item.hotel_name">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.hotel_name</h5>
+                            <p class="card-text"><strong>Merkez:</strong> @item.address</p>
+                            <p class="card-text"><strong>Fiyat:</strong> @item.min_total_price</p>
+                            <p class="card-text"><strong>Travel Sustainable:</strong> 2. Seviye</p>
+                            <p class="card-text"><strong>Puan:</strong> @item.review_score</p>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-star text-warning"></i>
+                                <span class="ms-1">@item.review_score</span>
+                            </div>
+                            <p class="card-text"><strong>Değerlendirme:</strong> 98 değerlendirme</p>
+                            <p class="card-text"><strong>Fırsat:</strong> 2024’e Merhaba Fırsatı</p>
+                            <p class="card-text"><strong>Grup İndirimi:</strong> Grubunuz için öneriliyor</p>
+
+                          
+                            <button type="button" class="btn btn-primary">Yer Durumuna Bak</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
