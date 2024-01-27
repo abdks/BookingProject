@@ -1,4 +1,4 @@
-# M&Y Yazılım Eğitim Akademi - EnUcuzOtel.Com
+# M&Y Yazılım Eğitim Akademi - Booking 
 Bu proje M&Y Yazılım Akademi kapsamında Murat Yücedağın vermiş olduğu Booking ödevidir.
 ## Projeye Genel Bakış
 
