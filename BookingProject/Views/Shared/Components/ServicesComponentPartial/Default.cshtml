@@ -1,4 +1,4 @@
-﻿
+﻿@model List<BookingProject.Dal.Entities.Services>
 @{
     Layout = null;
 }
@@ -8,23 +8,26 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <span>biz ne yapıyoz</span>
-                    <h2>Discover Our Services</h2>
+                    <h2>
+                        Neden Enucuzu’u seçmelisin?
+                    </h2>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-sm-6">
-                <div class="service-item">
-                    <i class="flaticon-036-parking"></i>
-                    <h4>Travel Plan</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.
-                    </p>
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item">
+                        <i class="@item.Image"></i>
+                        <h4>@item.Title</h4>
+                        <p>
+                           @item.Description                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
+            }
+
+           @*  <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-033-dinner"></i>
                     <h4>Catering Service</h4>
@@ -73,7 +76,7 @@
                         labore et dolore magna.
                     </p>
                 </div>
-            </div>
+            </div> *@
         </div>
     </div>
 </section>

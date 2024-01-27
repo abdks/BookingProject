@@ -1,57 +1,76 @@
-﻿
+﻿@model List<BookingProject.Dal.Entities.Sliders>
+
 @{
     Layout = null;
 }
+
+<style>
+    .booking-form input::placeholder {
+        color: #2DA64D;
+    }
+    /* Chrome ve Safari için */
+    input[type="date"]::-webkit-datetime-edit {
+        color: #2DA64D; /* Tarih rengini beyaz yapma */
+    }
+
+    input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+        color: #2DA64D; /* Tarih rengini beyaz yapma */
+    }
+</style>
 <section class="hero-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="hero-text">
-                    <h1>Sona A Luxury Hotel</h1>
+                    <h1>
+                        Türkiye’nin Otel Sitesi
+
+                    </h1>
                     <p>
-                        Here are the best hotel booking sites, including recommendations for international
-                        travel and for finding low-priced hotel rooms.
+                        Sizlere en uygun hizmeti verebilmek için 250 personelimizle 7/24 bir şekilde çalışıyoruz.
                     </p>
-                    <a href="#" class="primary-btn">Discover Now</a>
+                    <a href="#" class="primary-btn">Bize Ulaşın</a>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
                 <div class="booking-form">
-                    <h3>Benim hotel</h3>
-                    <form action="#">
-                        <div class="check-date">
-                            <label for="date-in">Check In:</label>
-                            <input type="text" class="date-input" id="date-in">
-                            <i class="icon_calendar"></i>
+                    <form method="get" asp-action="GetFilteredHotels" asp-controller="Booking">
+                        <div class="mb-3">
+                            <label for="city" class="form-label">Şehir giriniz</label>
+                            <input type="text" class="form-control border-1 py-2" id="city" name="city" placeholder="Şehir">
                         </div>
-                        <div class="check-date">
-                            <label for="date-out">Check Out:</label>
-                            <input type="text" class="date-input" id="date-out">
-                            <i class="icon_calendar"></i>
+                        <div class="mb-3">
+                            <label for="inputCheckIn" class="form-label">Giriş Tarihi Giriniz</label>
+                            <input type="date" name="checkInDate" id="inputCheckIn" class="form-control border-1 py-2">
                         </div>
-                        <div class="select-option">
-                            <label for="guest">Guests:</label>
-                            <select id="guest">
-                                <option value="">2 Adults</option>
-                                <option value="">3 Adults</option>
-                            </select>
+                        <div class="mb-3">
+                            <label for="inputCheckOut" class="form-label">Çıkış Tarihi Giriniz</label>
+                            <input type="date" id="inputCheckOut" name="checkOutDate" class="form-control border-1 py-2">
                         </div>
-                        <div class="select-option">
-                            <label for="room">Room:</label>
-                            <select id="room">
-                                <option value="">1 Room</option>
-                                <option value="">2 Room</option>
-                            </select>
+                        <div class="mb-3">
+                            <label for="personCount" class="form-label">Kişi sayısı giriniz</label>
+                            <input type="text" name="personCount" class="form-control border-1 py-2" placeholder="Kişi Sayısı">
                         </div>
-                        <button type="submit">Check Availability</button>
+                        <div class="mb-4">
+                            <label for="roomCount" class="form-label">Oda sayısı giriniz</label>
+                            <input type="text" name="roomCount" class="form-control border-1 py-2" placeholder="Oda Sayısı">
+                        </div>
+
+                        <div class="text-start">
+                            <button class="btn text-white py-2 px-4" type="submit" style="background-color:#2DA64D">Otel Bul</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <div class="hero-slider owl-carousel">
-        <div class="hs-item set-bg" data-setbg="/hotel/sona-master/img/hero/hero-1.jpg"></div>
-        <div class="hs-item set-bg" data-setbg="/hotel/sona-master/img/hero/hero-2.jpg"></div>
-        <div class="hs-item set-bg" data-setbg="/hotel/sona-master/img/hero/hero-3.jpg"></div>
+        @foreach (var item in Model)
+        {
+
+
+
+            <div class="hs-item set-bg" data-setbg="@item.ImageURL"></div>
+        }
     </div>
 </section>
